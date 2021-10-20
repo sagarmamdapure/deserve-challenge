@@ -13,6 +13,10 @@ public class Board {
 
     public int play(int faceValue) {
         this.currentPosition += faceValue;
+        if (this.currentPosition >= 100) {
+            System.out.printf("Roll dice face value is %d, current position is %d. GAME OVER", faceValue, this.currentPosition);
+            return -1;
+        }
         if (snakes.containsKey(this.currentPosition)) {
             System.out.printf(
                     "Roll dice face value is %d, Snake bite at %d position, current position is %d\n",

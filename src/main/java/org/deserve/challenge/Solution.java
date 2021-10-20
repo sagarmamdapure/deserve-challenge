@@ -9,7 +9,8 @@ public class Solution {
         snakes.put(14, 7);
         Board board = new Board(0, 100, snakes);
         for (int i = 0; i < 10; i++) {
-            board.play(dice.roll());
+            if (board.play(dice.roll()) < 0)
+                break;
         }
     }
 }
